@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfApp9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp9"
+        mc:Ignorable="d"
+        Title="Text Edit" Height="500" Width="500"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing">
+    <Window.CommandBindings>
+        <CommandBinding x:Name="new0"
+                        Command="ApplicationCommands.New"
+                        Executed="new0_Executed"/>
+        <CommandBinding x:Name="open0"
+                        Command="ApplicationCommands.Open"
+                        Executed="open0_Executed"/>
+        <CommandBinding x:Name="save"
+                        Command="ApplicationCommands.Save"
+                        Executed="save_Executed"/>
+        <CommandBinding x:Name="saveAs0"
+                        Command="ApplicationCommands.SaveAs"
+                        Executed="exit0_Executed"/>
+        <CommandBinding x:Name="exit0"
+                        Command="ApplicationCommands.Close"
+                        Executed="exit0_Executed"/>
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem x:Name="file1" Header="_File">
+                <MenuItem x:Name="new1" Header="_New" InputGestureText="Ctrl+N"
+                          Command="ApplicationCommands.New"/>
+                <MenuItem x:Name="open1" Header="_Open..." InputGestureText="Ctrl+O"
+                          Command="ApplicationCommands.Open"/>
+                <MenuItem x:Name="save1" Header="_Save" InputGestureText="Ctrl+S"
+                          Command="ApplicationCommands.Save"/>
+                <MenuItem x:Name="saveAs1" Header="Save_As..." InputGestureText="Ctrl+Shift+S"
+                          Command="ApplicationCommands.SaveAs"/>
+                <MenuItem x:Name="exit1" Header="E_xit" InputGestureText="Alt+F4"
+                          Command="ApplicationCommands.Close"/>
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="textbox1" Text="" AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 TextChanged="textbox1_TextChanged"/>
+                 TextChanged="textbox1_TextChanged"/>
+    </DockPanel>
+</Window>
